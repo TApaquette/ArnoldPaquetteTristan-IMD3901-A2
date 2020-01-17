@@ -21,10 +21,12 @@
 
 
         <!-- NEW: if we want to change the default camera parameters we must explicitly define a camera object -->
-        <a-entity camera wasd-controls look-controls position="0 1.2 2">
-            <a-entity   cursor="rayOrigin:mouse;"
-                        raycaster="far:20; inteval:100; objects:.clickable;">
-            </a-entity>
+        <a-entity position="0 5 12" rotation="-15 0 0">
+          <a-entity camera>
+              <a-entity   cursor="rayOrigin:mouse;"
+                          raycaster="far:20; inteval:100; objects:.clickable;">
+              </a-entity>
+          </a-entity>
         </a-entity>
 
         <a-entity id="plane" 
@@ -34,10 +36,29 @@
                     rotation="-90 0 0"
                     material="color:#FF0000;"></a-entity>
 
+        <a-entity id="destroyer" 
+                    geometry="primitive:plane; width:4; height:10; "
+                    position="7 0 0"
+                    scale="1 1 1" 
+                    rotation="-90 0 0"
+                    material="color:#000000;"></a-entity>
+
+        
+
         <a-entity id="button" class="clickable"
                     geometry="primitive:cylinder; radius:0.5; height:0.1;"
+                    position="-0.47 4 11"
+                    scale="0.2 0.2 0.2"
+                    rotation="45 0 0"
                     material="color:#00FF00;" 
                     create-cow-component="" ></a-entity>
+
+          <a-entity id="control board" 
+                    geometry="primitive:plane; width:3; height:1; "
+                    position="0 4 11"
+                    scale="0.4 0.4 0.4" 
+                    rotation="-45 0 0"
+                    material="color:#0000FF;"></a-entity>
 
         <a-entity id="helmet" 
                     position="0 1 -2" 
