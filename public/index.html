@@ -1,0 +1,48 @@
+<html>
+    <head>
+      <title>Hello, WebVR! - A-Frame</title>
+      <meta name="description" content="Hello, WebVR! - A-Frame">
+      <!--  note we are using 0.9.1 as most recent -->
+      <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+      <script src="js/create-cow-component.js"></script>
+      <script src="js/delete-cow-component.js"></script>
+
+      
+    </head>
+    <body>
+      <!-- A-Frame scene - al A-Frame entities must go in the scene -->
+      <a-scene>
+        <!-- A-Frame uses an asset system to load and cache content:  -->
+        <a-assets>
+
+            <a-asset-item id="helmet_model" response-type="arraybuffer" src="assets/models/DamagedHelmet.glb"></a-asset-item>
+
+        </a-assets>
+
+
+        <!-- NEW: if we want to change the default camera parameters we must explicitly define a camera object -->
+        <a-entity camera wasd-controls look-controls position="0 1.2 2">
+            <a-entity   cursor="rayOrigin:mouse;"
+                        raycaster="far:20; inteval:100; objects:.clickable;">
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="plane" 
+                    geometry="primitive:plane; width:10; height:10; "
+                    position="0 0 0"
+                    scale="1 1 1" 
+                    rotation="-90 0 0"
+                    material="color:#FF0000;"></a-entity>
+
+        <a-entity id="button" class="clickable"
+                    geometry="primitive:cylinder; radius:0.5; height:0.1;"
+                    material="color:#00FF00;" 
+                    create-cow-component="" ></a-entity>
+
+        <a-entity id="helmet" 
+                    position="0 1 -2" 
+                    gltf-model="#helmet_model"></a-entity>
+
+      </a-scene>
+    </body>
+</html>
