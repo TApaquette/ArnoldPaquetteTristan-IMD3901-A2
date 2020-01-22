@@ -53,6 +53,62 @@
                     material="color:#00FF00;" 
                     create-cow-component="" ></a-entity>
 
+          <a-entity id="leftArrow" 
+              position="-0.1 4 11"
+              scale="0.7 0.7 0.7"
+              rotation="45 0 0" >
+              <a-entity id="arrowBox"
+                  geometry="primitive:box; depth:0.1; height:0.1; width:0.2;"
+                  material="color:#FF5C3A;"></a-entity>
+              <a-entity id="arrowCone"
+                  geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
+                  rotation="0 0 90" 
+                  position="-0.15 0 0" 
+                  material="color:#FF5C3A;" ></a-entity>
+          </a-entity>
+
+          <a-entity id="rightArrow" 
+              position="0.4 4 11"
+              scale="0.7 0.7 0.7"
+              rotation="45 0 180" >
+              <a-entity id="arrowBox"
+                  geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
+                  material="color:#FF5C3A;"></a-entity>
+              <a-entity id="arrowCone"
+                  geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
+                  rotation="0 0 90" 
+                  position="-0.15 0 0" 
+                  material="color:#FF5C3A;" ></a-entity>
+          </a-entity>
+
+          <a-entity id="upArrow" 
+              position="0.15 4.04 10.93"
+              scale="0.6 0.6 0.6"
+              rotation="-45 0 -90" >
+              <a-entity id="arrowBox"
+                  geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
+                  material="color:#FF5C3A;"></a-entity>
+              <a-entity id="arrowCone"
+                  geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
+                  rotation="0 0 90" 
+                  position="-0.15 0 0" 
+                  material="color:#FF5C3A;" ></a-entity>
+          </a-entity>
+
+          <a-entity id="downArrow" 
+              position="0.15 3.95 11.04"
+              scale="0.6 0.6 0.6"
+              rotation="-45 0 90" >
+              <a-entity id="arrowBox"
+                  geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
+                  material="color:#FF5C3A;"></a-entity>
+              <a-entity id="arrowCone"
+                  geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
+                  rotation="0 0 90" 
+                  position="-0.15 0 0" 
+                  material="color:#FF5C3A;" ></a-entity>
+          </a-entity>
+
           <a-entity id="control board" 
                     geometry="primitive:plane; width:3; height:1; "
                     position="0 4 11"
