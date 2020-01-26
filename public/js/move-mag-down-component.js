@@ -1,13 +1,13 @@
-AFRAME.registerComponent( 'move-mag-left-component', {
+AFRAME.registerComponent( 'move-mag-down-component', {
     init : function() {
-        console.log('left');
+        console.log('down');
 
         const Context_AF = this;
         Context_AF.originalScale = Context_AF.el.object3D.scale.clone();
 
         Context_AF.el.addEventListener('click', function(event) {
-            console.log('click left');
-            Context_AF.moveLeft();
+            console.log('click down');
+            Context_AF.moveDown();
         });
 
         Context_AF.el.addEventListener('mouseenter', function(event) {
@@ -20,15 +20,17 @@ AFRAME.registerComponent( 'move-mag-left-component', {
             Context_AF.el.object3D.scale.set(Context_AF.originalScale.x, Context_AF.originalScale.y, Context_AF.originalScale.z);
         });
     },
-    moveLeft : function(){
+    moveDown : function(){
 
         const Context_AF = this;
 
         let location = document.getElementById("magnet");
         let magPos = location.getAttribute("position")
-        const moveIncrement = -0.4
+        const moveIncrement = 0.4
 
-        location.setAttribute('animation', 'property: position; to: ' + (magPos.x + moveIncrement) + '0 7; loop:false; dur: 200')
+        //location.setAttribute('animation', 'property: position; to:'  + (magPos.z + moveIncrement) + '0 7; loop:false; dur: 200')
+        location.setAttribute('animation', 'property:position; to:' + (magPos.x) + ' ' + (magPos.y) + ' ' + (magPos.z + moveIncrement) + '; loop:false dur: 200')
+        console.log(magPos)
 
         //add to scene
         let scene = document.querySelector('a-scene');

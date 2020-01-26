@@ -7,7 +7,7 @@ AFRAME.registerComponent( 'move-mag-up-component', {
 
         Context_AF.el.addEventListener('click', function(event) {
             console.log('click up');
-            Context_AF.moveRight();
+            Context_AF.moveUp();
         });
 
         Context_AF.el.addEventListener('mouseenter', function(event) {
@@ -20,7 +20,7 @@ AFRAME.registerComponent( 'move-mag-up-component', {
             Context_AF.el.object3D.scale.set(Context_AF.originalScale.x, Context_AF.originalScale.y, Context_AF.originalScale.z);
         });
     },
-    moveRight : function(){
+    moveUp : function(){
 
         const Context_AF = this;
 
@@ -28,7 +28,8 @@ AFRAME.registerComponent( 'move-mag-up-component', {
         let magPos = location.getAttribute("position")
         const moveIncrement = -0.4
 
-        location.setAttribute('animation', 'property: position; to:'  + (magPos.z + moveIncrement) + '0 7; loop:false; dur: 200')
+        //location.setAttribute('animation', 'property: position; to:'  + (magPos.z + moveIncrement) + '0 7; loop:false; dur: 200')
+        location.setAttribute('animation', 'property:position; to:' + (magPos.x) + ' ' + (magPos.y) + ' ' + (magPos.z + moveIncrement) + '; loop:false dur: 200')
         console.log(magPos)
 
         //add to scene

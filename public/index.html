@@ -9,6 +9,7 @@
       <script src="js/move-mag-right-component.js"></script>
       <script src="js/move-mag-left-component.js"></script>
       <script src="js/move-mag-up-component.js"></script>
+      <script src="js/move-mag-down-component.js"></script>
 
       
     </head>
@@ -111,12 +112,14 @@
               rotation="-45 0 90" >
               <a-entity id="arrowBox" class="clickable"
                   geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
-                  material="color:#FF5C3A;"></a-entity>
+                  material="color:#FF5C3A;"
+                  move-mag-down-component="" ></a-entity>
               <a-entity id="arrowCone" class="clickable"
                   geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
                   rotation="0 0 90" 
                   position="-0.15 0 0" 
-                  material="color:#FF5C3A;" ></a-entity>
+                  material="color:#FF5C3A;"
+                  move-mag-down-component="" ></a-entity>
           </a-entity>
 
           <a-entity id="control board" 
