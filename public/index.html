@@ -6,6 +6,9 @@
       <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
       <script src="js/create-cow-component.js"></script>
       <script src="js/delete-cow-component.js"></script>
+      <script src="js/move-mag-right-component.js"></script>
+      <script src="js/move-mag-left-component.js"></script>
+      <script src="js/move-mag-up-component.js"></script>
 
       
     </head>
@@ -15,7 +18,6 @@
         <!-- A-Frame uses an asset system to load and cache content:  -->
         <a-assets>
 
-            <a-asset-item id="helmet_model" response-type="arraybuffer" src="assets/models/DamagedHelmet.glb"></a-asset-item>
 
         </a-assets>
 
@@ -57,52 +59,60 @@
               position="-0.1 4 11"
               scale="0.7 0.7 0.7"
               rotation="45 0 0" >
-              <a-entity id="arrowBox"
+              <a-entity id="arrowBox" class="clickable"
                   geometry="primitive:box; depth:0.1; height:0.1; width:0.2;"
-                  material="color:#FF5C3A;"></a-entity>
-              <a-entity id="arrowCone"
+                  material="color:#FF5C3A;"
+                  move-mag-left-component="" ></a-entity>
+              <a-entity id="arrowCone" class="clickable"
                   geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
                   rotation="0 0 90" 
                   position="-0.15 0 0" 
-                  material="color:#FF5C3A;" ></a-entity>
+                  material="color:#FF5C3A;"
+                  move-mag-left-component="" ></a-entity>
           </a-entity>
 
           <a-entity id="rightArrow" 
               position="0.4 4 11"
               scale="0.7 0.7 0.7"
               rotation="45 0 180" >
-              <a-entity id="arrowBox"
+              <a-entity id="arrowBox" class="clickable"
                   geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
-                  material="color:#FF5C3A;"></a-entity>
-              <a-entity id="arrowCone"
+                  material="color:#FF5C3A;"
+                  scale="1 1 1"
+                  move-mag-right-component="" ></a-entity>
+              <a-entity id="arrowCone" class="clickable"
                   geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
                   rotation="0 0 90" 
                   position="-0.15 0 0" 
-                  material="color:#FF5C3A;" ></a-entity>
+                  material="color:#FF5C3A;" 
+                  scale="1 1 1"
+                  move-mag-right-component="" ></a-entity>
           </a-entity>
 
           <a-entity id="upArrow" 
               position="0.15 4.04 10.93"
               scale="0.6 0.6 0.6"
               rotation="-45 0 -90" >
-              <a-entity id="arrowBox"
+              <a-entity id="arrowBox" class="clickable"
                   geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
-                  material="color:#FF5C3A;"></a-entity>
-              <a-entity id="arrowCone"
+                  material="color:#FF5C3A;"
+                  move-mag-up-component="" ></a-entity>
+              <a-entity id="arrowCone" class="clickable"
                   geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
                   rotation="0 0 90" 
                   position="-0.15 0 0" 
-                  material="color:#FF5C3A;" ></a-entity>
+                  material="color:#FF5C3A;"
+                  move-mag-up-component="" ></a-entity>
           </a-entity>
 
           <a-entity id="downArrow" 
               position="0.15 3.95 11.04"
               scale="0.6 0.6 0.6"
               rotation="-45 0 90" >
-              <a-entity id="arrowBox"
+              <a-entity id="arrowBox" class="clickable"
                   geometry="primitive:box; depth:0.1; height:0.1; width:0.2;" 
                   material="color:#FF5C3A;"></a-entity>
-              <a-entity id="arrowCone"
+              <a-entity id="arrowCone" class="clickable"
                   geometry="primitive:cone; radiusBottom:0.1; height:0.1;"
                   rotation="0 0 90" 
                   position="-0.15 0 0" 
@@ -116,10 +126,10 @@
                     rotation="-45 0 0"
                     material="color:#0000FF;"></a-entity>
 
-        <a-entity id="helmet" 
-                    position="0 1 -2" 
-                    gltf-model="#helmet_model"></a-entity>
-
+          <a-entity id="magnet" 
+                    geometry="primitive:cylinder; height: 0.6; radius:2;"
+                    position="0 7 0"
+                    material="color:#b1b1cd"></a-entity>
       </a-scene>
     </body>
 </html>
