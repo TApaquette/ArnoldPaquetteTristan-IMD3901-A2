@@ -10,6 +10,7 @@
       <script src="js/move-mag-left-component.js"></script>
       <script src="js/move-mag-up-component.js"></script>
       <script src="js/move-mag-down-component.js"></script>
+      <script src="js/magnetize.js"></script>
 
       
     </head>
@@ -121,6 +122,13 @@
                   material="color:#FF5C3A;"
                   move-mag-down-component="" ></a-entity>
           </a-entity>
+
+          <a-entity id="magButton" class="clickable"
+                    geometry="primitive:box; height:0.1; width:0.1; depth:0.1;"
+                    position="-0.29 3.9 11.09"
+                    rotation="-45 0 0"
+                    material="color:#b1b1cd"
+                    magnetize="" ></a-entity>
 
           <a-entity id="control board" 
                     geometry="primitive:plane; width:3; height:1; "

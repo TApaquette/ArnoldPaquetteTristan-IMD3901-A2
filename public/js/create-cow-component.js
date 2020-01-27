@@ -25,6 +25,7 @@ AFRAME.registerComponent( 'create-cow-component', {
         const Context_AF = this;
 
         let cowElem = document.createElement('a-entity');
+        cowElem.setAttribute('id', 'crate');
         cowElem.setAttribute('class', 'clickable');
         cowElem.setAttribute('geometry','primitive:box; depth:2; height:2; width:2; ');
         cowElem.setAttribute('delete-cow-component', '');
