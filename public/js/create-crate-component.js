@@ -11,8 +11,6 @@ AFRAME.registerComponent( 'create-crate-component', {
         });
 
         Context_AF.el.addEventListener('mouseenter', function(event) {
-            //el = html entity or element
-            //object3D = three.js (rendering engine) 3D element
             Context_AF.el.object3D.scale.set(Context_AF.originalScale.x * 1.1, Context_AF.originalScale.y * 1.1, Context_AF.originalScale.z * 1.1);
         });
 
@@ -24,20 +22,17 @@ AFRAME.registerComponent( 'create-crate-component', {
 
         const Context_AF = this;
 
+        //setting the attributes of the created boxes
         let crateElem = document.createElement('a-entity');
         crateElem.setAttribute('id', 'crate');
-        crateElem.setAttribute('class', 'clickable');
         crateElem.setAttribute('geometry','primitive:box; depth:2; height:2; width:2; ');
 
-        //random transforms
+        //random transforms for spawn conditions
         crateElem.setAttribute('position', {x:(Math.random() * 6.0) - 3.0, y:1, z: 2.0 - (Math.random() * 3.0) });
         crateElem.setAttribute('rotation', {x:0, y:Math.random() * 360.0, z:0});
 
         //add to scene
         let scene = document.querySelector('a-scene');
         scene.appendChild(crateElem);
-
-        let destroyPlane = document.getElementById("destroyer");
-        //destroyPlane.setAttribute('delete-crate-component', '');
     }
 });

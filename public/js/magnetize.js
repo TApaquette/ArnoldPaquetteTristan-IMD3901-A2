@@ -20,22 +20,34 @@ AFRAME.registerComponent( 'magnetize', {
         });
         
     },
+    //function runs when magButton is clicked
     magnetize : function(){
 
+        //getting the position of magnet and box
         let location = document.getElementById("magnet");
         let magPos = location.getAttribute("position");
 
         let crateLocation = document.getElementById("crate");
         let cratePos = crateLocation.getAttribute("position");
 
-        if((magPos.y - cratePos.y) < 2){
-            cratePos.y = 1;
+        if((magPos.y - cratePos.y) < 2){ //if box is near magnet in height
+            cratePos.y = 1; //drops the box
+            
+            setTimeout('', 500);
 
             let destroyPlane = document.getElementById("destroyer");
-            destroyPlane.setAttribute('delete-crate-component', '');
+
+            setTimeout(() => { // allows user to see the box land in the destruction plane for a moment before being deleted
+                
+                destroyPlane.setAttribute('delete-crate-component', ''); //runs the component to check if the box is in the right area to be deleted
+                destroyPlane.removeAttribute('delete-crate-component'); //removes the component, so that the next box dropped can properly check for deletion
+             }, 500);
+            
+
+            
         } 
-        else if ((magPos.x - cratePos.x) < 2 && (magPos.z - cratePos.z) < 2 && (magPos.x - cratePos.x) > -2 && (magPos.z - cratePos.z) > -2){
-            cratePos.y = (magPos.y - 1);
+        else if ((magPos.x - cratePos.x) < 2 && (magPos.z - cratePos.z) < 2 && (magPos.x - cratePos.x) > -2 && (magPos.z - cratePos.z) > -2){ //if box is far magnet in height, and near magnet horizontally
+            cratePos.y = (magPos.y - 1); //lift box to magnet
         } 
     }
 
