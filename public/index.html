@@ -4,8 +4,8 @@
       <meta name="description" content="Hello, WebVR! - A-Frame">
       <!--  note we are using 0.9.1 as most recent -->
       <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-      <script src="js/create-cow-component.js"></script>
-      <script src="js/delete-cow-component.js"></script>
+      <script src="js/create-crate-component.js"></script>
+      <script src="js/delete-crate-component.js"></script>
       <script src="js/move-mag-right-component.js"></script>
       <script src="js/move-mag-left-component.js"></script>
       <script src="js/move-mag-up-component.js"></script>
@@ -15,16 +15,13 @@
       
     </head>
     <body>
-      <!-- A-Frame scene - al A-Frame entities must go in the scene -->
       <a-scene>
-        <!-- A-Frame uses an asset system to load and cache content:  -->
         <a-assets>
 
 
         </a-assets>
 
 
-        <!-- NEW: if we want to change the default camera parameters we must explicitly define a camera object -->
         <a-entity position="0 5 12" rotation="-15 0 0">
           <a-entity camera>
               <a-entity   cursor="rayOrigin:mouse;"
@@ -45,7 +42,7 @@
                     position="7 0 0"
                     scale="1 1 1" 
                     rotation="-90 0 0"
-                    material="color:#000000;"></a-entity>
+                    material="color:#000000;" );></a-entity>
 
         
 
@@ -55,7 +52,7 @@
                     scale="0.2 0.2 0.2"
                     rotation="45 0 0"
                     material="color:#00FF00;" 
-                    create-cow-component="" ></a-entity>
+                    create-crate-component="" ></a-entity>
 
           <a-entity id="leftArrow" 
               position="-0.1 4 11"

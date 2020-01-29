@@ -1,4 +1,4 @@
-AFRAME.registerComponent( 'create-cow-component', {
+AFRAME.registerComponent( 'create-crate-component', {
     init : function() {
         console.log('init component');
 
@@ -7,7 +7,7 @@ AFRAME.registerComponent( 'create-cow-component', {
 
         Context_AF.el.addEventListener('click', function(event) {
             console.log('click');
-            Context_AF.createCow();
+            Context_AF.createCrate();
         });
 
         Context_AF.el.addEventListener('mouseenter', function(event) {
@@ -20,24 +20,24 @@ AFRAME.registerComponent( 'create-cow-component', {
             Context_AF.el.object3D.scale.set(Context_AF.originalScale.x, Context_AF.originalScale.y, Context_AF.originalScale.z);
         });
     },
-    createCow : function(){
+    createCrate : function(){
 
         const Context_AF = this;
 
-        let cowElem = document.createElement('a-entity');
-        cowElem.setAttribute('id', 'crate');
-        cowElem.setAttribute('class', 'clickable');
-        cowElem.setAttribute('geometry','primitive:box; depth:2; height:2; width:2; ');
-        cowElem.setAttribute('delete-cow-component', '');
+        let crateElem = document.createElement('a-entity');
+        crateElem.setAttribute('id', 'crate');
+        crateElem.setAttribute('class', 'clickable');
+        crateElem.setAttribute('geometry','primitive:box; depth:2; height:2; width:2; ');
 
         //random transforms
-        cowElem.setAttribute('position', {x:(Math.random() * 6.0) - 3.0, y:1, z: -2.0 - (Math.random() * 3.0) });
-        //const randScale = 0.2 + (Math.random() * 8.0);
-        //cowElem.setAttribute('scale', {x:randScale, y:randScale, z:randScale});
-        cowElem.setAttribute('rotation', {x:0, y:Math.random() * 360.0, z:0});
+        crateElem.setAttribute('position', {x:(Math.random() * 6.0) - 3.0, y:1, z: 2.0 - (Math.random() * 3.0) });
+        crateElem.setAttribute('rotation', {x:0, y:Math.random() * 360.0, z:0});
 
         //add to scene
         let scene = document.querySelector('a-scene');
-        scene.appendChild(cowElem);
+        scene.appendChild(crateElem);
+
+        let destroyPlane = document.getElementById("destroyer");
+        //destroyPlane.setAttribute('delete-crate-component', '');
     }
 });
